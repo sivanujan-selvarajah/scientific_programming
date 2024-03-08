@@ -3,7 +3,7 @@ from pystrich.qrcode import QRCodeEncoder
 
 # Creates QR-Code based on text input
 encoder = QRCodeEncoder("Docker ist cool!")
-encoder.save( "./QRCode_test.png" )
+encoder.save("./QRCode_test.png")
 
 print(encoder.get_ascii())
 
