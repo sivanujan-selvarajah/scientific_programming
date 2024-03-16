@@ -9,30 +9,35 @@ Note that this is an exercise that must be accomplished on your local computer!
     (Menu -> Terminal -> New Terminal Window or CTRL+SHIFT+¨)
 
 #---------------------------------------------------------------------
-# Create a new folder 'QRCode_generator' in your working direktory
+# In Visual Studio Code ...
 #---------------------------------------------------------------------
 
 e.g. Week_03
        |--challenge
        |--exercises
-         |--QRCode_generator
+         |--Docker_QRCode_Generator
 
 
---> in VS Code -> Terminal cd into the folder 'QRCode_generator'
+--> in VS Code -> Terminal cd into the folder 'Docker_QRCode_Generator'
 
 #---------------------------------------------------------------------
 # Create a file 'my_script.py' with the content ...
 #---------------------------------------------------------------------
 
+import time
+import sys
 from pystrich.qrcode import QRCodeEncoder
 
 # Creates QR-Code based on text input
 encoder = QRCodeEncoder("Docker ist cool!")
 encoder.save( "./QRCode_test.png" )
 
+# Prints ASCII-version of the QR-Code
 print(encoder.get_ascii())
+print('Container is running, use another VS Code terminal!')
+sys.stdout.flush()
 
-# Prevents the container from stopping after run
+# Prevents the container from stopping
 while True:
     time.sleep(1)
 
@@ -62,7 +67,7 @@ docker run python-qrcode
 # Copy the QR-Code from the container to your local file system
 #-------------------------------------------------------------------
 
---> in VS Code -> new Terminal cd into the folder 'QRCode_generator'
+--> in VS Code -> new Terminal cd into the folder 'Docker_QRCode_Generator'
 
 # Show running container and look for the container-id
 docker ps
