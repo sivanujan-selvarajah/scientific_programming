@@ -9,11 +9,11 @@ from reportlab.lib.units import inch
 
 # Document format
 doc = SimpleDocTemplate("pdf_info_letter.pdf", pagesize=letter,
-						 rightMargin=72, leftMargin=72,
-						 topMargin=72, bottomMargin=18)
+                        rightMargin=72, leftMargin=72,
+                        topMargin=72, bottomMargin=18)
 
 # Story, logo & style
-Story=[]
+Story = []
 
 # Image
 logo = "https://upload.wikimedia.org/wikipedia/commons/c/cf/Lanz_Bulldog_1928-crop.jpg"
@@ -31,7 +31,7 @@ address_parts = ["Theaterstrasse 17", "Winterthur, 8400"]
 img = Image(logo, 3*inch, 2.5*inch)
 Story.append(img)
 Story.append(Spacer(1, 48))
-styles=getSampleStyleSheet()
+styles = getSampleStyleSheet()
 styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY))
 ptext = '%s' % formatted_time
 Story.append(Paragraph(ptext, styles["Normal"]))
@@ -39,10 +39,10 @@ Story.append(Spacer(1, 24))
 
 # Create return address
 ptext = '%s' % full_name
-Story.append(Paragraph(ptext, styles["Normal"]))       
+Story.append(Paragraph(ptext, styles["Normal"]))
 for part in address_parts:
-	ptext = '%s' % part.strip()
-	Story.append(Paragraph(ptext, styles["Normal"]))   
+    ptext = '%s' % part.strip()
+    Story.append(Paragraph(ptext, styles["Normal"]))
 Story.append(Spacer(1, 24))
 
 # Content
