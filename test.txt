@@ -1,0 +1,4 @@
+<<<<<<< HEAD
+=======
+This comes from the upstream and is a test ...
+>>>>>>> upstream/master
