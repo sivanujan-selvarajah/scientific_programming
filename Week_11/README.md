@@ -1,1 +1,0 @@
-Today, no class due to International Workers' Day!!!
